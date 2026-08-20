@@ -1,20 +1,57 @@
-# 净读CleanRead
+# 净读 CleanRead
 
-本仓库包含：
+净读 CleanRead 是一款界面专业、开箱即用的网页阅读器浏览器扩展。输入网址或点击悬浮按钮，即可抓取正文、去掉广告和干扰，一键导出干净的 Markdown / 纯文本，供阅读、写作、AI 使用。
 
-- 浏览器扩展源码与构建脚本：`extension/`
-- AjkAPI 应用广场 SQL：`D:/project/ajkapi/migrations/insert_cleanread_app.sql`
-- 产品设计文档：`产品设计文档.md`
+## 功能
 
-安装、使用和计费说明见 [extension/README.md](extension/README.md)。
+- 一键提取当前页正文，去除广告与无关模块
+- 支持多链接批量处理、本页链接采集与嵌套链接采集
+- 输出 Markdown / 纯文本 / JSON / HTML，支持复制与下载
+- 历史记录、收藏、语音朗读、深浅主题
+- 图片文字识别（OCR）：默认关闭，可手动开启
+- 百度文库支持：Word / Excel / PDF / PPT 文档正文提取；PPT 与扫描版 PDF 自动提供页面图片并可用 OCR 识别图中文字
+- 计费：免费版每天 3 篇；2 元/月包月不限量；OCR 按积分包计费
 
-## 当前版本
+## 安装（Chrome / Edge / 360 等 Chromium 浏览器）
 
-- v1.0.0
-- 免费版：每天 3 篇
-- 付费版：2 元/月，从 AjkAPI 余额扣除
-- 支持 Chrome / Edge / 360 等 Chromium 内核浏览器
+1. 下载安装包：`release/cleanread-v1.0.0-chromium.zip`
+2. 解压到任意目录（例如 `D:\cleanread`）
+3. 打开浏览器扩展管理页：
+   - Chrome：地址栏输入 `chrome://extensions/`
+   - Edge：地址栏输入 `edge://extensions/`
+   - 360 浏览器：`360se://extensions/`（或设置 → 扩展程序）
+4. 打开右上角“开发者模式”
+5. 点击“加载已解压的扩展程序”，选择解压后的目录
+6. 固定“净读CleanRead”图标即可使用
 
-## 发布包
+## 使用
 
-运行构建后，将 `extension/dist/` 打包为 `cleanread-v1.0.0-chromium.zip` 即可作为浏览器扩展安装包。
+- **提取当前页**：在任意网页上点击右下角悬浮的“读”按钮，或点击扩展图标 → “提取当前页”（快捷键 Alt+C）
+- **批量处理**：扩展弹窗 → “批量处理链接”，每行粘贴一个链接
+- **嵌套采集**：扩展弹窗 → “采集本页内链接”，勾选目标链接后批量处理
+- **图片文字识别**：在处理前勾选“图片文字识别（默认关闭）”，识别结果会追加到正文
+- **导出**：阅读器右侧选择 Markdown / 纯文本 / JSON / HTML，复制或下载
+- **百度文库**：先在浏览器中打开文库文档页，再点悬浮“读”按钮即可提取；或直接把文库链接粘贴到输入框处理
+
+## 计费说明
+
+- 免费版：每天 3 篇，支持单篇清洗与基础 Markdown 导出
+- 付费版：2 元/月（从 AjkAPI 余额扣除），不限量、批量处理、高级导出、历史/收藏/多设备、去广告、学生模式等
+- OCR：按 AjkAPI 积分计划计费，可在应用广场购买“净读OCR体验包 / 加量包”
+- 在扩展“设置”中连接 AjkAPI（服务器：`https://ajkapi.9zos.com`）后即可开通包月
+
+## 下载
+
+- AjkAPI：https://ajkapi.9zos.com/downloads/cleanread-v1.0.0-chromium.zip
+- Gitee：https://gitee.com/pjtech/cleanread/raw/master/release/cleanread-v1.0.0-chromium.zip
+- GitHub：https://raw.githubusercontent.com/jerrypeng2000/cleanread/master/release/cleanread-v1.0.0-chromium.zip
+
+校验：`release/SHA256SUMS.txt`
+
+## 版本
+
+- v1.0.0：首个正式版，含百度文库 Word/Excel/PDF/PPT 提取与 OCR 图片识别
+
+## 隐私说明
+
+正文提取在本地浏览器内完成；OCR 图片仅发送至 AjkAPI 服务器用于识别，识别后不保存图片内容。详见 AjkAPI 隐私政策。

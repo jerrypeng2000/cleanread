@@ -1,2 +1,2 @@
-9c0c4116e77bb04fb6ff2d907af7cf174e50758d73aa74cd6762f61badc51367  cleanread-v1.0.0-chromium.zip
+dfcd9d1293ad44e4d9e9985c03204e6b7b5333f6c81576900b3fb046ed1a60fb  cleanread-v1.0.0-chromium.zip
 04908a06d2aa2f90e1f8640bb5946d61340efc49c6100cf34897b69f2b8755e9  cleanread-v1.0.0-src.zip
